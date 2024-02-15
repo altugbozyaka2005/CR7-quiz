@@ -23,10 +23,7 @@ export default function Question(props) {
             }
             return stateObject;
         })
-    }, [props.reset])
-
-    // state for selected multiple choice
-    const [currentSelection, setCurrentSelection] = React.useState();
+    }, [props.reset, answersArray])
 
     function handleClick(choice, number, correctAnswer) {
         if (!props.showAnswer) {
@@ -75,7 +72,7 @@ export default function Question(props) {
             <div className='multiple-choice-container'>
                 {multipleChoice}
             </div>
-            {props.showAnswer && <h3 className='explanation'>{props.explanation}</h3>}
+            {props.showAnswer && <h3 classdName='explanation'>{props.explanation}</h3>}
         </div>
     )
 }
